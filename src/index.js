@@ -1,10 +1,9 @@
 const express = require('express');
 const app = express();
 const { sequelize } = require('./db/connection');
-const PORT = 3001;
 
-// Import models for register them on sequalize
-require('./db/models');
+require('dotenv').config();
+require('./db/models'); // Import models for register them on sequalize
 
 app.use(express.json()); // Middleware to parse json
 
@@ -19,6 +18,8 @@ const startServer = async () => {
 
   await sequelize.sync();
   console.log('Database synchronized with ORM');
+
+  const PORT = process.env.PORT;
 
   app.listen(PORT, () => {
     console.log(`App listening on port: ${PORT}`);
