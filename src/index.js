@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const { sequelize } = require('./db/connection');
+const { seedDataBase } = require('./db/seed');
 
 require('dotenv').config();
 require('./db/models'); // Import models for register them on sequalize
@@ -13,14 +14,15 @@ app.get('/', (req, res) => {
 
 const startServer = async () => {
  try {
-  await sequelize.authenticate();
+  await sequelize.authenticate(); // Coinnect witg postgreSQL
   console.log('Connected with database');
 
-  await sequelize.sync();
+  await sequelize.sync({ force: true }); // Syncronize tables (force: true elimina y crea las tablas al iniciar al servidor)
   console.log('Database synchronized with ORM');
 
-  const PORT = process.env.PORT;
+  await seedDataBase(); // Seed database after sync
 
+  const PORT = process.env.SERVER_PORT;
   app.listen(PORT, () => {
     console.log(`App listening on port: ${PORT}`);
   });
