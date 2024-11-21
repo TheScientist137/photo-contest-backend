@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getAllImages, getImageById } = require('../controllers/imageController');
+const { getAllImages, getImageById } = require('../controllers/imageControllers');
 
 // Route to obtain all images
 router.get('/images', getAllImages);
