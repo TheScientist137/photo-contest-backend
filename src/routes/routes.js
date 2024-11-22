@@ -9,6 +9,6 @@ router.get('/images', getAllImages);
 router.get('/images/:id', getImageById);
 
 // Route to post a new caption
-router.post('/images/:id/caption/new', postNewCaption);``
+router.post('/images/:id/caption/new', postNewCaption);
 
 module.exports = router;
