@@ -2,15 +2,14 @@ const express = require('express');
 const app = express();
 const { sequelize } = require('./db/connection');
 const { seedDataBase } = require('./db/seed');
-const imageRoutes = require('./routes/routes');
-const captionRoutes = require('./routes/captionRoutes');
+const routes = require('./routes/routes');
 
 require('dotenv').config();
 require('./db/models'); // Import models for register them on sequalize
 
 app.use(express.json()); // Middleware to parse json
-app.use('/api', imageRoutes);
-app.use('/api', captionRoutes);
+// change this to only one route
+app.use('/api', routes);
 
 app.get('/', (req, res) => {
  res.send('Hello World');
