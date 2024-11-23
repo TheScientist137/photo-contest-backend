@@ -38,7 +38,7 @@ const postNewCaption = async (req, res) => {
     return res.status(404).json({ message: 'Image not found' })
    }
 
-   const newCaption = await CaptionModel.create({ text, imageId });
+   const newCaption = await CaptionModel.create({ text, imageId, userId: req.session.userId });
    res.status(201).json(newCaption);
   } catch (error) {
      res.status(500).json({ message: "Failed to add caption", error });

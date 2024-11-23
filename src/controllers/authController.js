@@ -32,15 +32,24 @@ const logInUser = async (req, res) => {
    return res.status(400).json({ message: 'Invalid email or password' });
   }
 
-  // express session
+  req.session.userId = user.id;
+  req.session.username = user.username;
 
-  res.status(200).json({ message: 'Log in succesfully', token, user });
+  res.status(200).json({ message: 'Log in succesfully', user });
  } catch (error) {
     res.status(500).json({ message: 'Error in log in', error });
  }
 }
 
-// Controller to log out (Se iplementa la logica en el frontend ya que el backend no almacena tokens)
-const logOutUser = (req, res) => res.status(200).json({ message: 'Log out succesfully' });
+// Controller to log out
+const logOutUser = (req, res) => {
+ req.session.destroy((error) => {
+  if (error) {
+   return res.status(500).json({ message: 'Error closing session' });
+  }
+
+  res.status(200).json({ message: 'Session closed succesfully' });
+ });
+}
 
 module.exports = { registerUser, logInUser, logOutUser };
