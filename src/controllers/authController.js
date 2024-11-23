@@ -1,5 +1,4 @@
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 const { UserModel } = require('../db/models');
 
 // Controller to register a new user
@@ -33,8 +32,7 @@ const logInUser = async (req, res) => {
    return res.status(400).json({ message: 'Invalid email or password' });
   }
 
-  // Generate a JWT
-  const token = jwt.sign({ id: user.id, email: user.email }, 'secret', { expiresIn: '1h' });
+  // express session
 
   res.status(200).json({ message: 'Log in succesfully', token, user });
  } catch (error) {
