@@ -42,6 +42,7 @@ const logInUser = async (req, res) => {
  }
 }
 
-// Controller to log out
+// Controller to log out (Se iplementa la logica en el frontend ya que el backend no almacena tokens)
+const logOutUser = (req, res) => res.status(200).json({ message: 'Log out succesfully' });
 
-module.exports = { registerUser, logInUser };
+module.exports = { registerUser, logInUser, logOutUser };
