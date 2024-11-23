@@ -3,17 +3,15 @@ const app = express();
 const { sequelize } = require('./db/connection');
 const { seedDataBase } = require('./db/seed');
 const routes = require('./routes/routes');
+const authRoutes = require('./routes/authRoutes');
 
 require('dotenv').config();
 require('./db/models'); // Import models for register them on sequalize
 
 app.use(express.json()); // Middleware to parse json
-// change this to only one route
-app.use('/api', routes);
 
-app.get('/', (req, res) => {
- res.send('Hello World');
-});
+app.use('/api', routes);
+app.use('/auth', authRoutes);
 
 const startServer = async () => {
  try {
