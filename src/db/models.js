@@ -17,10 +17,17 @@ const CaptionModel = sequelize.define('Caption', {
  } 
 });
 
+// User Model
+const UserModel = sequelize.define('User', {
+ username: { type: DataTypes.STRING, allowNull: false, unique: true },
+ email: { type: DataTypes.STRING, allowNull: false, unique: true, validate: { isEmail: true } },
+ password: { type: DataTypes.STRING, allowNull: false }
+});
+
 // Relation One - to - Many: One image belongs to many captions
 ImageModel.hasMany(CaptionModel, { foreignKey: 'imageId' });
 
 // Relation One - to - One: One caption belongs to one image
 CaptionModel.belongsTo(ImageModel, { foreignKey: 'imageId' });
 
-module.exports = { ImageModel, CaptionModel };
+module.exports = { ImageModel, CaptionModel, UserModel };

@@ -19,11 +19,11 @@ const getImageById = async (req, res) => {
       include: [{ model: CaptionModel }],
     });
 
-    !image
-      ? res.status(404).json({ message: "Image not found" })
-      : res.status(200).json(image);
+    !image ?
+    res.status(404).json({ message: "Image not found" }) : 
+    res.status(200).json(image);
   } catch (error) {
-    res.status(500).json({ message: "Error obtaining image by id", error });
+    	res.status(500).json({ message: "Error obtaining image by id", error });
   }
 };
 
