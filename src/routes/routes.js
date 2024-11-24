@@ -10,6 +10,6 @@ router.get('/images', getAllImages);
 router.get('/images/:id', getImageById);
 
 // Route to post a new caption (Only for authenticated users)
-router.post('/images/:id/caption/new', authenticateUser, postNewCaption);
+router.post('/images/:id/caption', authenticateUser, postNewCaption);
 
 module.exports = router;
