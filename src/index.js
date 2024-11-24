@@ -1,3 +1,8 @@
+// Falta hacer la documentacion
+// subir el proyecto a github
+// Mejorar el proyecto
+// Hacer el deploy con Render
+
 const express = require('express');
 const session = require('express-session');
 const app = express();
@@ -27,10 +32,10 @@ app.use('/auth', authRoutes);
 
 const startServer = async () => {
  try {
-  await sequelize.authenticate(); // Coinnect witg postgreSQL
+  await sequelize.authenticate(); // Connect witg postgreSQL
   console.log('Connected with database');
 
-  await sequelize.sync({ force: true }); // Syncronize tables (force: true elimina y crea las tablas al iniciar al servidor)
+  await sequelize.sync({ force: true }); // Syncronize tables (force: true -- elimina y crea las tablas al iniciar al servidor)
   console.log('Database synchronized with ORM');
 
   await seedDataBase(); // Seed database after sync
