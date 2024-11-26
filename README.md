@@ -41,7 +41,6 @@ This API includes endpoints for user registration, login and logout, adding capt
    - Create a PostgreSQL database
    - Configure your .env file with the following environment variables:
    
-
    ```bash
    DB_HOST=localhost
    DB_PORT=5432
@@ -67,6 +66,12 @@ This API includes endpoints for user registration, login and logout, adding capt
 ## Endpoints
 
 ### User Management
+
+| HTTP Method |    Endpoint   |       Description       |                            Request Body                           | Authorization |
+|:-----------:|:-------------:|:-----------------------:|:-----------------------------------------------------------------:|:-------------:|
+| POST        | /users/signup | Register a new user     | { "username": "string", "email": "string", "password": "string" } | No            |
+| POST        | /users/login  | Log in an existing user | { "email": "string", "password": "string" }                       | No            |
+| POST        | /users/logout | Log out a user          | None                                                              | No            |
 
 ### Image Management
 
