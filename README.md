@@ -36,9 +36,6 @@ This API includes endpoints for user registration, login and logout, adding capt
    npm install
 
 3. Set up the database:
-
-   - Create a PostgreSQL database
-   - Configure your .env file with the following environment variables:
    
    ```bash
    DB_HOST=localhost
