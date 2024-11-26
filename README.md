@@ -32,8 +32,8 @@ This API includes endpoints for user registration, login and logout, adding capt
 
 2. Install dependencies:
 
-```bash
-npm install
+   ```bash
+   npm install
 
 3. Set up the database:
    
