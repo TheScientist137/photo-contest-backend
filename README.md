@@ -7,7 +7,7 @@ This API includes endpoints for user registration, login and logout, adding capt
 
 ## Features
 
-- **User Authentication**: Secure user registration and login with hashed passwords using bcrypt.
+- **User Authentication**: Secure user registration and login with hashed passwords using `bcrypt`.
 - **Session Management**: Maintains user sessions using `express-session`.
 - **CRUD Operations**: Manage images and captions with robust endpoints.
 - **Authorization Middleware**: Restrict certain actions to logged-in users only.
