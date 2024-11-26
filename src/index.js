@@ -1,5 +1,4 @@
 // Falta hacer la documentacion
-// subir el proyecto a github
 // Mejorar el proyecto
 // Hacer el deploy con Render
 // Construiur un frontend (opcional)
