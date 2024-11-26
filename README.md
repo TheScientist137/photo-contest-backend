@@ -99,23 +99,6 @@ This API includes endpoints for user registration, login and logout, adding capt
 
 ---
 
-## Authentication and Authorization
-
-- **Password Hashing**: User passwords are securely hashed using `bcrypt`.
-- **Session-Based Authentication**:
-  - User sessions are managed with `express-session`.
-  - Once logged in
-
----
-
-## Caching
-
----
-
-## Testing the API
-
----
-
 ## License
 
 This project is licensed under the MIT License.
