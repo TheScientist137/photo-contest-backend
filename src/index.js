@@ -2,6 +2,7 @@
 // subir el proyecto a github
 // Mejorar el proyecto
 // Hacer el deploy con Render
+// Construiur un frontend (opcional)
 
 const express = require('express');
 const session = require('express-session');
@@ -19,7 +20,7 @@ require('./db/models'); // Import models for register them on sequalize
 app.use(session({ // express-session configuration
   secret: process.env.SESSION_SECRET, // Key to sign the session cookie
   resave: false, // Evita que la session se guarde de nuevo si no hubo cambios
-  saveUninitialized: true, // No guarda sesiones vacias
+  saveUninitialized: true, // Don`t save empty sessions
   cookie: { secure: fals, maxAge: 1000 * 60 * 60  } // https => secure: true (production) - maxAge: 1h
 }))
 

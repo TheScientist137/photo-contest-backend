@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getAllImages, getImageById, postNewCaption } = require('../controllers/controllers');
+const { getAllImages, getImageById, postNewCaption } = require('../controllers/controller');
 const authenticateUser = require('../middleware/auth');
 
 // Route to obtain all images
