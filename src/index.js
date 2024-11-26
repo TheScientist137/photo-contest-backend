@@ -1,4 +1,3 @@
-// Falta hacer la documentacion
 // Mejorar el proyecto
 // Hacer el deploy con Render
 // Construiur un frontend (opcional)
