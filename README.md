@@ -11,7 +11,6 @@ This API includes endpoints for user registration, login and logout, adding capt
 - **Session Management**: Maintains user sessions using `express-session`.
 - **CRUD Operations**: Manage images and captions with robust endpoints.
 - **Authorization Middleware**: Restrict certain actions to logged-in users only.
-- **Caching**: Optimized image retrieval with in-memory caching using `node-cache`.
 - **Database Integration**: Uses PostgreSQL with Sequelize ORM for database operations.
 
 
@@ -75,15 +74,38 @@ This API includes endpoints for user registration, login and logout, adding capt
 
 ### Image Management
 
+| HTTP Method |   Endpoint  |       Description       | Request Body | Authorization |
+|:-----------:|:-----------:|:-----------------------:|:------------:|:-------------:|
+| GET         | /images     | Retrieve all images     | None         | No            |
+| GET         | /images/:id | Retrieve an image by ID | None         | No            |
+
 ### Caption Management
+
+| HTTP Method |         Endpoint         |        Description        |     Request Body     | Authorization |
+|:-----------:|:------------------------:|:-------------------------:|:--------------------:|:-------------:|
+| POST        | /images/:id/captions/new | Add a caption to an image | { "text": "string" } | Yes           |
 
 ---
 
 ## Technologies Used
 
+- **Node.js**: Server runtime.
+- **Express**: Backend web framework.
+- **Sequelize**: ORM for PostgreSQL database interactions.
+- **PostgreSQL**: Database system.
+- **bcrypt**: Secure password hashing.
+- **express-session**: Session management middleware.
+- **dotenv**: Handling environmental variables
+
 ---
 
 ## Authentication and Authorization
+
+- **Password Hashing**: User passwords are securely hashed using `bcrypt`.
+- **Session-Based Authentication**:
+
+  - User sessions are managed with `express-session`.
+  - Once logged in
 
 ---
 
