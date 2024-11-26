@@ -1,7 +1,7 @@
 # Photo Caption Contest API
 
 A backend API built with Node.js, Express, and Sequelize for managing images, captions, and user authentication.
-This API includes endpoints for user registration, login and logout, adding caption to images and middleware for authorization and caching
+This API includes endpoints for user registration, login and logout, adding caption to images and middleware for authorization and caching.
 
 ---
 
@@ -14,7 +14,6 @@ This API includes endpoints for user registration, login and logout, adding capt
 - **Caching**: Optimized image retrieval with in-memory caching using `node-cache`.
 - **Database Integration**: Uses PostgreSQL with Sequelize ORM for database operations.
 
----
 
 ## Setup and Installation
 
@@ -42,7 +41,7 @@ This API includes endpoints for user registration, login and logout, adding capt
    - Create a PostgreSQL database
    - Configure your .env file with the following environment variables:
    
-   
+
    ```bash
    DB_HOST=localhost
    DB_PORT=5432
@@ -60,5 +59,37 @@ This API includes endpoints for user registration, login and logout, adding capt
 
    ```bash
    npm start
+   ```
+   The API will be available at `http://localhost:3001`.
 
-   The API will be available at `http://localhost:3001`
+---
+
+## Endpoints
+
+### User Management
+
+### Image Management
+
+### Caption Management
+
+---
+
+## Technologies Used
+
+---
+
+## Authentication and Authorization
+
+---
+
+## Caching
+
+---
+
+## Testing the API
+
+---
+
+## License
+
+This project is licensed under the MIT License.
