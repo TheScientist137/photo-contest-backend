@@ -40,8 +40,8 @@ This API includes endpoints for user registration, login and logout, adding capt
 3. Set up the database:
 
    - Create a PostgreSQL database
-   - Connfigure your .env file with the following environment variables:
-
+   - Configure your .env file with the following environment variables:
+   
    ```bash
    DB_HOST=localhost
    DB_PORT=5432
